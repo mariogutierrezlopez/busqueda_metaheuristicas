@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex document"] 1761409405.70427 "document.aux" "document.bbl" "document" 1761409408.71502 0
+["bibtex document"] 1761415311.60405 "document.aux" "document.bbl" "document" 1761415313.4316 0
   "./referencias.bib" 1761409390 0 d41d8cd98f00b204e9800998ecf8427e ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "document.aux" 1761409407 1821 7c976e9cc390db8e4dd4fa6af9cfab62 "pdflatex"
+  "document.aux" 1761415312 2501 59ecad0ecb3e8392bd4c31b88887af3d "pdflatex"
   (generated)
   "document.bbl"
   "document.blg"
   (rewritten before read)
-["pdflatex"] 1761409406.14874 "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" "document.pdf" "document" 1761409408.71603 0
+["pdflatex"] 1761415311.88184 "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" "document.pdf" "document" 1761415313.43245 0
   "C:/Users/Mator/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761408572 81116 42e978edc04ab2135d8d2c5e7065b4fe ""
   "C:/Users/Mator/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758905278 24225046 23356836e8c6602eb1b039313ab69f1f ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ectt1000.tfm" 993062340 1348 d70ddf2d5d512b838e50a335e385e919 ""
@@ -35,14 +35,21 @@
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy10.tfm" 1136765053 1124 6c73e740cf17375f03eec0ee63599741 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb" 1247596667 32298 c6d25bb16d1eac01ebdc6d7084126a1e ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1247596667 32001 6aeea3afe875097b1eb0da29acd61e28 ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1247596667 36281 c355509802a035cadc5f15869451dcee ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1247596666 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty" 1704647332 150008 7a05b0fdc0167c04e192003e780ab195 ""
@@ -129,12 +136,12 @@
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1700599895 7147 d45559f8a31b8c53ada0640516660003 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" 1761409401 3206 1ae71a02cb27bdcf94ee5c1045a5d3cd ""
-  "document.aux" 1761409407 1821 7c976e9cc390db8e4dd4fa6af9cfab62 "pdflatex"
-  "document.bbl" 1761409406 283 de5ffaf5b665b622658d80bed97ba2a5 "bibtex document"
-  "document.out" 1761409407 867 927fab4bce9e114fd16bce6e389026b4 "pdflatex"
-  "document.tex" 1761409401 3206 1ae71a02cb27bdcf94ee5c1045a5d3cd ""
-  "document.toc" 1761409407 501 568519ae3f32ec154b2e6ddb102e4101 "pdflatex"
+  "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" 1761415309 7499 1f195d6de2b5bed40073d7f0dcacfb64 ""
+  "document.aux" 1761415312 2501 59ecad0ecb3e8392bd4c31b88887af3d "pdflatex"
+  "document.bbl" 1761415311 283 de5ffaf5b665b622658d80bed97ba2a5 "bibtex document"
+  "document.out" 1761415312 1321 286f9acfac0465dc5ffa9ccf66985ccb "pdflatex"
+  "document.tex" 1761415309 7499 1f195d6de2b5bed40073d7f0dcacfb64 ""
+  "document.toc" 1761415312 771 0307e9ee3c2c2411e48cbe109a646ae0 "pdflatex"
   (generated)
   "document.aux"
   "document.log"
