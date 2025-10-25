@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tocloft}    % opcional, mejora el índice
+\usepackage{ragged2e}
+\usepackage[table]{xcolor}
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[spanish]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\setlength{\parindent}{0pt}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{makecell}   % para saltos de línea en celdas
+\usepackage{float}      % para [H]
+\usepackage{enumitem}
+\usepackage{soul}
+\usepackage{xcolor}
+\setulcolor{red} % color del subrayado
+\setul{0.3ex}{0.2ex} % grosor y separación
+\usepackage[table]{xcolor}
+\definecolor{highlight}{HTML}{FDEE94}
+\newcommand{\bigO}{\mathcal{O}}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{cleveref}
+\usepackage{natbib} 
+\usepackage{multirow} 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algpseudocode} 
+\usepackage{parcolumns} 
+
+
+\begin{document}
+
+
+\title{Análisis y Aplicación de Metaheurísticas}
+
+\author{{Nombre del Alumno} \\
+{\small Universidad Politécnica de Madrid, Spain}}
+\date{\today}
+
+\maketitle
+
+% --- AQUÍ EMPIEZA LA NUMERACIÓN ROMANA ---
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\begin{abstract} 
+% Escribe aquí el resumen (abstract) del trabajo.
+\end{abstract}
+
+% --- ÍNDICE DE CONTENIDOS ---
+\cleardoublepage
+\tableofcontents
+
+% --- COMIENZO DEL CONTENIDO PRINCIPAL (NUMERACIÓN ARÁBIGA) ---
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Metaheurística 1: [Nombre de la Metaheurística]}
+\label{sec:meta1}
+
+\subsection{Introducción}
+\label{sec:meta1_intro}
+% Aquí se describe brevemente la metaheurística.
+
+
+\subsection{Algoritmo}
+\label{sec:meta1_algoritmo}
+% Aquí se explica de forma clara cada uno de los elementos asociados:
+% - Espacio de soluciones
+% - Definición del entorno
+% - Función objetivo
+% - Etc.
+
+
+\subsection{Implementación}
+\label{sec:meta1_implementacion}
+% Aquí se indica todo lo referente a la implementación:
+% - Lenguaje utilizado
+% - Parámetros utilizados
+% - Simulaciones realizadas
+% - Problemas analizados
+
+
+\subsection{Conclusiones}
+\label{sec:meta1_conclusiones}
+% Aquí se aportan las conclusiones sobre el comportamiento 
+% del método en cada uno de los problemas analizados.
+
+
+% --- REFERENCIAS ---
+% Esta sección agrupará todas las fuentes citadas en el documento.
+\cleardoublepage
+\section*{Referencias}
+\addcontentsline{toc}{section}{Referencias} % Añade "Referencias" al índice
+
+% Usa \cite{clave_bibtex} en el texto para citar.
+% Asegúrate de tener un archivo .bib (ej. 'referencias.bib')
+% en la misma carpeta que este archivo .tex
+\bibliographystyle{plainnat}
+\bibliography{referencias}
+
+\end{document}
