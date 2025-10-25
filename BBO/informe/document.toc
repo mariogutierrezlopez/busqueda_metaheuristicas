@@ -1,7 +1,10 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{\numberline {1}Metaheurística 1: [Nombre de la Metaheurística]}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Introducción}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Algoritmo}{1}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Implementación}{1}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Conclusiones}{1}{subsection.1.4}%
-\contentsline {section}{Referencias}{2}{section*.1}%
+\contentsline {subsection}{\numberline {1.2}Definiciones y Conceptos Básicos}{1}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Migración}{1}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Mutación}{1}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}Algoritmo}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Implementación}{2}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Conclusiones}{2}{subsection.1.5}%
+\contentsline {section}{Referencias}{3}{section*.1}%
