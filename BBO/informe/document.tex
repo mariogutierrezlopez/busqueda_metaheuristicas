@@ -1,10 +1,4 @@
 \documentclass{article}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{tocloft}    % opcional, mejora el índice
-\usepackage{ragged2e}
-\usepackage[table]{xcolor}
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
 \usepackage[spanish]{babel}
 
 % Set page size and margins
@@ -13,34 +7,14 @@
 
 % Useful packages
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath, amsthm}
 \usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\setlength{\parindent}{0pt}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{makecell}   % para saltos de línea en celdas
-\usepackage{float}      % para [H]
-\usepackage{enumitem}
-\usepackage{soul}
-\usepackage{xcolor}
-\setulcolor{red} % color del subrayado
-\setul{0.3ex}{0.2ex} % grosor y separación
-\usepackage[table]{xcolor}
-\definecolor{highlight}{HTML}{FDEE94}
-\newcommand{\bigO}{\mathcal{O}}
 \usepackage{amssymb}
-\usepackage[spanish]{babel}
-\usepackage{cleveref}
-\usepackage{natbib} 
-\usepackage{multirow} 
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{algorithm}
-\usepackage{algpseudocode} 
-\usepackage{parcolumns} 
 
+
+\usepackage{biblatex}
+\bibliography{referencias}
+
+\newtheorem{mydef}{Definición}
 
 \begin{document}
 
@@ -53,65 +27,126 @@
 
 \maketitle
 
-% --- AQUÍ EMPIEZA LA NUMERACIÓN ROMANA ---
-\pagenumbering{roman}
-\setcounter{page}{1}
+\newpage
 
-\begin{abstract} 
-% Escribe aquí el resumen (abstract) del trabajo.
-\end{abstract}
-
-% --- ÍNDICE DE CONTENIDOS ---
-\cleardoublepage
-\tableofcontents
-
-% --- COMIENZO DEL CONTENIDO PRINCIPAL (NUMERACIÓN ARÁBIGA) ---
-\cleardoublepage
-\pagenumbering{arabic}
-\setcounter{page}{1}
-
-\section{Metaheurística 1: [Nombre de la Metaheurística]}
-\label{sec:meta1}
-
-\subsection{Introducción}
+\section{Introducción}
 \label{sec:meta1_intro}
-% Aquí se describe brevemente la metaheurística.
+\cite{simon2008biogeography}
 
 
-\subsection{Algoritmo}
+\section{Definiciones previas}
 \label{sec:meta1_algoritmo}
-% Aquí se explica de forma clara cada uno de los elementos asociados:
-% - Espacio de soluciones
-% - Definición del entorno
-% - Función objetivo
-% - Etc.
+
+El algoritmo está construido en base a una serie de definiciones preliminares que le dan forma a la estructura del mismo, pasando de un lenguaje
+basado en la biología con conceptos como hábitat a un lenguaje computacional. 
+A continuación se presentan dichas definiciones:
+
+\begin{mydef}
+    Un hábitat es un vector de $m \in \mathbb{N}$ enteros que representa una solución factible al problema.
+\end{mydef}
+
+\begin{mydef}
+    El índice variable de idoneidad es un entero que es permitido en el hábitat. 
+\end{mydef}
+
+\begin{mydef}
+    El índice de idoneidad del hábitat $HSI: H \rightarrow \mathbb{R}$ es una medida de la bondad de la solución representada por el hábitat. En los algoritmos de optimización basados en población se denomina fitness.
+\end{mydef}
+
+\begin{mydef}
+    Un ecosistema $H^{n}$ es un grupo de $n \in \mathbb{N}$ hábitats.
+\end{mydef}
+
+\begin{mydef}
+    La tasa de inmigración $\lambda: \mathbb{R} \rightarrow \mathbb{R}$ es una función monótona no creciente del HSI.
+\end{mydef}
+
+\begin{mydef}
+    La tasa de emigración $\mu: \mathbb{R} \rightarrow \mathbb{R}$ es una función monótona no decreciente del HSI.
+\end{mydef}
+
+En la práctica, asumimos que $\lambda$ y $\mu$ son funciones lineales con los mismos máximos.
+
+\begin{mydef}
+    La modificación del hábitat $\Omega: H^{n} \rightarrow H$ es un operador probabilístico que ajusta el hábitat $H$ basado en el 
+    ecosistema $H^{n}$. 
+    La probabilidad de que H sea modificado es proporcional a la tasa de inmigración $\lambda$, y la probabilidad de que el origen de 
+    la modificación sea el hábitat $H_{j}$ es proporcional a la tasa de emigración $\mu_j$. 
+\end{mydef}
+
+    Esta función se puede describir de la siguiente manera:
+
+\begin{mydef}
+    Mutación $M: H \rightarrow H$ es un operador probabilístico que modifica de forma aleatoria un hábitat.
+\end{mydef}
+
+    Esta función se puede describir de la siguiente manera:
 
 
-\subsection{Implementación}
+\begin{mydef}
+    La función de transición del ecosistema $\psi = (m,n,\lambda,\mu,\Omega,M): H^{n} \rightarrow H^{n}$ es una 
+    séxtupula que modifica el ecosistema desde una iteración a la siguiente. \\
+    Comienza calculando las tasas de inmigración y emigración para cada hábitat en el ecosistema. Luego la función de modificación del hábitat 
+    actúa sobre cada hábitat en el ecosistema, seguido por el cálculo del HSI. Y finalmente, se produce la mutación, seguido del cálculo del HSI 
+    para cada hábitat.
+\end{mydef}
+
+\begin{mydef}
+    El algoritmo $BBO = (\mathcal{I},\psi,\mathcal{T})$ es una tripleta que propone una solución a un problema de optimización, donde:
+    \begin{itemize}
+        \item $\mathcal{I}: \emptyset \rightarrow {H^{n},HSI^{n}}$ es una función que crea un ecosistema inicial de hábitats y calcula cada HSI correspondiente.
+        \item $\psi$ es la función de transición del ecosistema.
+        \item$ \mathcal{T}: H^{n} \rightarrow {true,false}$ es un criterio de terminación.
+    \end{itemize}
+\end{mydef}
+
+\section{Algoritmo}
+
+Después de toda una serie de definiciones que transforman conceptos biológicos a un lenguaje computacional, vamos a describir el algoritmo BBO de forma secuencial:
+
+\begin{enumerate}
+    \item Inicializamos los parámetros del BBO. 
+    \item Inicializamos un conjunto aleatorio de hábitats, donde cada hábitat se corresponde con una solución potencial al problema dado.
+    Se trata de la implementación del operador $\mathcal{I}$.
+    \item Para cada hábitat, asignamos el HSI al número de especies, S, la tasa de inmigración $\lambda$ y la tasa de emigración $\mu$.
+    \item Utilizamos la inmigración y emigración de forma probabilística para modificar cada hábitat no elitista, y recalculamos cada HSI.
+    \item Para cada hábitat, actualizamos la propabilidad de sus especies usando la siguiente ecuación: 
+    \[
+    \dot{P}_s =
+    \begin{cases}
+    -(\lambda_s + \mu_s) P_s + \mu_{s+1} P_{s+1}, & \text{si } s = 0, \\[8pt]
+    -(\lambda_s + \mu_s) P_s + \lambda_{s-1} P_{s-1} + \mu_{s+1} P_{s+1}, & \text{si } 1 \le s \le S_{\max}-1, \\[8pt]
+    -(\lambda_s + \mu_s) P_s + \lambda_{s-1} P_{s-1}, & \text{si } s = S_{\max}.
+    \end{cases}
+    \]
+
+    A continuación mutamos cada hábitat no elitista basándonos en su probabilidad y recalculamos cada HSI.
+
+    \item Volvemos al paso (3) para la siguiente iteración. Este bucle termina después de cierto número de generaciones previamente definido o después de haber 
+    encontrado una solución aceptable para el problema. Esto es la implementación del operador $\mathcal{T}$.
+
+\end{enumerate}
+
+
+
+    
+
+
+
+
+\section{Implementación}
 \label{sec:meta1_implementacion}
-% Aquí se indica todo lo referente a la implementación:
-% - Lenguaje utilizado
-% - Parámetros utilizados
-% - Simulaciones realizadas
-% - Problemas analizados
 
+\section{Resultados}
+\label{sec:meta1_resultados}
 
-\subsection{Conclusiones}
+\section{Conclusiones}
 \label{sec:meta1_conclusiones}
-% Aquí se aportan las conclusiones sobre el comportamiento 
-% del método en cada uno de los problemas analizados.
+
 
 
 % --- REFERENCIAS ---
-% Esta sección agrupará todas las fuentes citadas en el documento.
 \cleardoublepage
-\section*{Referencias}
-\addcontentsline{toc}{section}{Referencias} % Añade "Referencias" al índice
-
-% Usa \cite{clave_bibtex} en el texto para citar.
-% Asegúrate de tener un archivo .bib (ej. 'referencias.bib')
-% en la misma carpeta que este archivo .tex
-\bibliographystyle{plainnat}
-\bibliography{referencias}
+\printbibliography
 
 \end{document}
