@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber document"] 1761417653.7926 "document.bcf" "document.bbl" "document" 1761419684.41319 0
-  "document.bcf" 1761419684.37032 108554 b2f9322951069194ec8d517a5da0529b "pdflatex"
-  "referencias.bib" 1761416102.31112 241 e4fa996df60f25196109d637b423259a ""
+["biber document"] 1761425105.38231 "document.bcf" "document.bbl" "document" 1761427664.38378 0
+  "document.bcf" 1761427664.33992 108554 b2f9322951069194ec8d517a5da0529b "pdflatex"
+  "referencias.bib" 1761424897.35299 241 e4fa996df60f25196109d637b423259a ""
   (generated)
   "document.bbl"
   "document.blg"
   (rewritten before read)
-["pdflatex"] 1761419683.90762 "/Users/samu/Desktop/Master/Metaheuristica/busqueda_metaheuristicas/BBO/informe/document.tex" "document.pdf" "document" 1761419684.41343 0
-  "/Users/samu/Desktop/Master/Metaheuristica/busqueda_metaheuristicas/BBO/informe/document.tex" 1761419683.79908 5616 c2e1d50f34129cc8949c2d115cd123d4 ""
+["pdflatex"] 1761427663.86887 "/Users/samu/Desktop/Master/Metaheuristica/busqueda_metaheuristicas/BBO/informe/document.tex" "document.pdf" "document" 1761427664.384 0
+  "/Users/samu/Desktop/Master/Metaheuristica/busqueda_metaheuristicas/BBO/informe/document.tex" 1761427663.67489 11849 a44302955bc4495d99494ab37858eae7 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -94,10 +94,10 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1735873849 5485709 8129e419010b46b234085a26866cdb87 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1735873991 3347678 812e90e9b331646edb133418a37789c9 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "document.aux" 1761419684.36843 1400 110bdad40e44238ef1bf214cc93e5030 "pdflatex"
-  "document.bbl" 1761417654.71315 1814 c9d493eef37b0229c93c5d76d03b71cb "biber document"
-  "document.run.xml" 1761419684.37076 2334 aa2503ca0d14e33589cec530a1fa0891 "pdflatex"
-  "document.tex" 1761419683.79908 5616 c2e1d50f34129cc8949c2d115cd123d4 ""
+  "document.aux" 1761427664.33797 1894 9203039c52448227e7980eabf7936097 "pdflatex"
+  "document.bbl" 1761425117.90357 1814 c9d493eef37b0229c93c5d76d03b71cb "biber document"
+  "document.run.xml" 1761427664.34038 2334 aa2503ca0d14e33589cec530a1fa0891 "pdflatex"
+  "document.tex" 1761427663.67489 11849 a44302955bc4495d99494ab37858eae7 ""
   (generated)
   "document.aux"
   "document.bcf"
