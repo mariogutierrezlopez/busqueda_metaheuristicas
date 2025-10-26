@@ -4,6 +4,7 @@
 % Set page size and margins
 % Replace `letterpaper' with `a4paper' for UK/EU standard size
 \usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{graphicx}
 
 % Useful packages
 \usepackage[utf8]{inputenc}
@@ -199,13 +200,20 @@ En este apartado se redactan las conclusiones obtenidas de la implementación de
 
 En primer lugar, a pesar de que el algoritmo de Optimización Basada en Biogeografía está diseñado para problemas mono-objetivo, se puede adaptar para explorar el frente de Pareto en problemas multiobjetivo. Esta adaptación se ha realizado utilizando una suma ponderada de los pesos $w_1$ y $w_2$, estos pesos van a ir cambiando a lo largo de las 50 ejecuciones. Estos pesos cumplen que $$w_1 + w_2 = 1, \quad w_1 \ge 0, \quad w_2 \ge 0$$\\
 
-Los resultados recogidos en el Jupyter Notebook demuestran que para la mayoría de funciones, BBO consigue generar un conjunto de soluciones que se aproxima al frente de Pareto. El mayor aprendizaje que hemos obtenido realizando esta práctica se ha obtenido analizando el comportamiento de BBO en las diferentes funciones de prueba: \\
+Los resultados recogidos en la Figura \ref{fig:resultados_bbo_3x2} demuestran que para la mayoría de funciones, BBO consigue generar un conjunto de soluciones que se aproxima al frente de Pareto. El mayor aprendizaje que hemos obtenido realizando esta práctica se ha obtenido analizando el comportamiento de BBO en las diferentes funciones de prueba: \\
 \begin{itemize}
     \item En las funciones $\mathcal{T}_1$ Convexa y $\mathcal{T}_2$ No Convexa el algoritmo no ha tenido muchos problemas. En la función de prueba $\mathcal{T}_1$, este algoritmo generó puntos bastante cercanos al frente óptimo y con una buena distribución. Esto era esperable ya que las sumas ponderadas funcionan bien para frentes convexos. En cuanto a la función $\mathcal{T}_2$ el algoritmo consiguió dibujar la forma cóncava del frente aunque la distribución de puntos no es uniforme y hay menos densidad de soluciones en el centro.
     \item En la función ($\mathcal{T}_3$) sobre el Frente Discreto, se puede apreciar claramente la discontinuidad de esta función. Las soluciones generadas se agrupan en segmentos separados que componen el frente de Pareto. Podemos concluir que el algoritmo puede identificar y converger a regiones óptimas no continuas.
     \item Las funciones $\mathcal{T}_4$ Multimodal, $\mathcal{T}_5$ Deceptiva están diseñadas para representar Frentes Complejos. En la función $\mathcal{T}_4$ es donde se presentan las mayores dificutlades ya que existen pocas soluciones cercanas al frente de Pareto. En cuanto a $\mathcal{T}_5$ ciertas combinaciones de bits alejan la solución del óptimo global. Con la población de 50 y 100 generaciones, podemos concluir basándonos en los resultados de las gráficas que BBO ha convergido a un frente subóptimo. Es probable que se necesiten poblaciones más grandes, más generaciones, o quizás ajustes en los parámetros de migración/mutación para superar este problema.
     \item En la función $\mathcal{T}_6$ para representar un Frente no Uniforme, el algoritmo ha conseguido representar la forma general del frente. Aunque la densidad de los puntos no es uniforme y existen muchas soluciones en los extremos de $f_1$, este es el comportamiento esperado de esta función. Esto se debe a que es menos probable que las operaciones de migración y mutación del algoritmo generen soluciones en las zonas intermedias por el rango estrecho de valores $x_1$ debido a la forma de la función $\sin^6(6\pi x_1)$.
 \end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{resultados_bbo_3x2.png}
+    \caption{Frentes de Pareto aproximados obtenidos por BBO-SOEA para las seis funciones de prueba T1 a T6.}
+    \label{fig:resultados_bbo_3x2}
+\end{figure}
 
 Mediante la realización de esta práctica, hemos comprendido en profundidad el algoritmo y la analogía que tiene inspirada en la naturaleza y la biología. La implementación de las funciones de prueba ha sido importante para poder ver el rendimiento de este algoritmo en diferentes problemas y poder comprender en qué casos funciona mejor. Ver como BBO se enfrenta a estos problemas \textit{benchmark} nos ha ayudado a comprender y relacionar la teoría vista en clase con la práctica computacional.
 

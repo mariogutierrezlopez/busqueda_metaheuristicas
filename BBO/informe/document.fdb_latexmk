@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber document"] 1761477116.82385 "document.bcf" "document.bbl" "document" 1761479102.85648 0
-  "document.bcf" 1761479102 107917 74304d3fecadb4ce6e749bd7f6a4891c "pdflatex"
+["biber document"] 1761480373.62669 "document.bcf" "document.bbl" "document" 1761480456.43855 0
+  "document.bcf" 1761480456 107917 74304d3fecadb4ce6e749bd7f6a4891c "pdflatex"
   "referencias.bib" 1761474822 570 965cabeb17918e2c4d9cffd665762251 ""
   (generated)
   "document.bbl"
   "document.blg"
   (rewritten before read)
-["pdflatex"] 1761479101.00775 "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" "document.pdf" "document" 1761479102.85791 0
+["pdflatex"] 1761480455.05805 "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" "document.pdf" "document" 1761480456.43936 0
   "C:/Users/Mator/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761435195 81116 42e978edc04ab2135d8d2c5e7065b4fe ""
   "C:/Users/Mator/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758905278 24225046 23356836e8c6602eb1b039313ab69f1f ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -48,6 +48,7 @@
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1247596667 31099 342ef5a582aacbd3346f3cf4579679fa ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty" 1704647332 150008 7a05b0fdc0167c04e192003e780ab195 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/es/babel-es.ini" 1704647334 4345 33a8cc6f0a7c6afcb84895b2c963a4e5 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/es/babel-spanish.tex" 1704647334 336 a1c472f674f6f0c25a2c95ad8c7ad024 ""
@@ -57,6 +58,7 @@
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infwarerr.sty" 1575399508 8356 7bbb2c2373aa810be568c29e333da8ed ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty" 1702206890 17865 1a9bd36b4f98178fa551aca822290953 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/generic/pdftexcmds/pdftexcmds.sty" 1623005277 20089 80423eac55aa175305d35b49e04fe23b ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/epstopdf-sys.cfg" 1616067285 584 2a1075dd71571459f59146da9f7502ad ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amsfonts.sty" 1358197772 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amssymb.sty" 1358197772 13829 94730e64147574077f8ecfea9bb69af4 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd" 1358197772 961 6518c6525a34feb5e8250ffa91731cff ""
@@ -82,10 +84,16 @@
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-dm.def" 1679055682 32455 8d3e554836db11aab80a8e11be62e1b1 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/cbx/numeric.cbx" 1679055682 4629 cda468e8a0b1cfa0f61872e171037a4b ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/lbx/spanish.lbx" 1679055682 47877 2937a87fb5d0198bff6d13364058deea ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1623003186 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty" 1601897756 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg" 1578053545 1104 7ac475a4e3466b0b43e138e9356bda83 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty" 1578053545 42759 9cf6c5257b1bc7af01a58859749dd37a ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/graphics.cfg" 1465894292 1224 978390e9c2234eab29404bc21b268d1e ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/pdftex.def" 1663918690 19448 1e988b341dda20961a6b931bcde55519 ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphics.sty" 1665067579 18387 8f900a490197ebaf93c02ae9476d4b09 ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty" 1665067579 8010 a8d949cbdbc5c983593827c9eec252e1 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty" 1665067579 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
+  "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1665067579 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty" 1656236481 22555 6d8e155cfef6d82c3d5c742fea7c992e ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty" 1665066333 13815 760b0c02f691ea230f5359c4e1de23a7 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1704400941 30006 57b07afb710ee2f649c65cfbafda39c1 ""
@@ -94,11 +102,12 @@
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.def" 1280941015 1620 fb1c32b818f2058eca187e5c41dfae77 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.sty" 1280941015 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" 1761479099 20222 2ec3fc4ae2f8fc2a60e1429c44ae91dc ""
-  "document.aux" 1761479102 1880 88829ca43b9f9c70d03a045bcab1d821 "pdflatex"
-  "document.bbl" 1761477120 3287 af6e014f941750878da50bcf20c59157 "biber document"
-  "document.run.xml" 1761479102 2334 aa2503ca0d14e33589cec530a1fa0891 "pdflatex"
-  "document.tex" 1761479099 20222 2ec3fc4ae2f8fc2a60e1429c44ae91dc ""
+  "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" 1761480454 20532 5ddca0b5d13a67f3ea6ca3e1e8431adf ""
+  "document.aux" 1761480456 2126 8c7fcfeed185897d183483931aea27ff "pdflatex"
+  "document.bbl" 1761480381 3287 af6e014f941750878da50bcf20c59157 "biber document"
+  "document.run.xml" 1761480456 2334 aa2503ca0d14e33589cec530a1fa0891 "pdflatex"
+  "document.tex" 1761480454 20532 5ddca0b5d13a67f3ea6ca3e1e8431adf ""
+  "resultados_bbo_3x2.png" 1761480219 79479 d835a39f8ea6015f6954a866f7812b85 ""
   (generated)
   "document.aux"
   "document.bcf"
