@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  26 OCT 2025 12:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  26 OCT 2025 12:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -476,27 +476,22 @@ Package biblatex Info: ... file 'document.bbl' found.
  (document.bbl)
 Package biblatex Info: Reference section=0 on input line 19.
 Package biblatex Info: Reference segment=0 on input line 19.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
  (C:\Users\Mator\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
  (C:\Users\Mator\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/Mator/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
@@ -505,17 +500,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
 [3] [4]
-Overfull \hbox (11.30945pt too wide) in paragraph at lines 191--192
+Overfull \hbox (11.30945pt too wide) in paragraph at lines 193--194
 \OT1/cmr/m/n/10 ([][]\OT1/cmtt/m/n/10 POP_SIZE[]\OT1/cmr/m/n/10 ) de 50, n^^Sume-ro de ge-ne-ra-cio-nes ([][]\OT1/cmtt/m/n/10 GENERATIONS[]\OT1/cmr/m/n/10 ) de 100, par^^Same-tro de eli-tis-mo ([][]\OT1/cmtt/m/n/10 ELITISM_PARAM[]\OT1/cmr/m/n/10 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
-[5] [6] [7
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+[6] [7
 
 ] (document.aux
 LaTeX Info: Redefining \sptext on input line 9.
@@ -531,15 +536,15 @@ Package logreq Info: Writing requests to 'document.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 11794 strings out of 474486
- 218543 string characters out of 5743755
- 1942542 words of memory out of 5000000
- 33987 multiletter control sequences out of 15000+600000
+ 11795 strings out of 474486
+ 218551 string characters out of 5743755
+ 1941542 words of memory out of 5000000
+ 33988 multiletter control sequences out of 15000+600000
  566745 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,10n,81p,1693b,1798s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 66i,10n,81p,1689b,1798s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (7 pages, 217632 bytes).
+Output written on document.pdf (7 pages, 218920 bytes).
 PDF statistics:
  101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
