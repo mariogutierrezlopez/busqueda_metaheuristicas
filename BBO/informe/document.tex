@@ -179,7 +179,7 @@ También se distingue de algoritmos como ACO (Optimización por Colonia de Hormi
 Las mayores características las comparte con algoritmos como PSO (Optimización por Enjambre de Partículas) y DE (Evolución Diferencial), ya que estos también mantienen una población fija de soluciones, pero cada solución es capaz de aprender de su entorno y adaptarse con el progreso del algoritmo.
 Sin embargo, BBO se diferencia de estos algoritmos en que sus soluciones cambian directamente según la migración desde otras soluciones. Luego, las soluciones de BBO comparten directamente sus atributos con otras soluciones.
 
-\subsection{Implementación}
+\section{Implementación}
 \label{sec:meta2_implementacion}
 Para la implementación del algoritmo de BBO para se ha decidido utilizar \verb|Python 3| por su gran cantidad de librerías y su eficiencia en Jupyter Notebook. Se utilizaron librerías como \verb|Numpy| para cálculos numéricos vectorizados, \verb|Matplotlib.pyplot| para generar las gráficas de los frentes de Pareto, \verb|random| para funciones de aleatoriedad, \verb|copy| para crear clones de las soluciones candidatas y \verb|scipy.special.comb| para el cálculo de coeficientes binomiales necesarios en el proceso de mutación.
 
@@ -194,7 +194,7 @@ Las simulaciones se realizaron adoptando un enfoque similar al de SOEA (Single-O
 Los parámetros utilizados fueron consistentes en todas las simulaciones: tamaño de población (\verb|POP_SIZE|) de 50, número de generaciones (\verb|GENERATIONS|) de 100, parámetro de elitismo (\verb|ELITISM_PARAM|) de 2, tasa máxima de migración (\verb|MAX_MIGRATION|) de 1.0, y tasa máxima de mutación (\verb|m_max|) de 0.05.
 
 
-\subsection{Conclusiones}
+\section{Conclusiones}
 \label{sec:meta2_Conclusiones}
 En este apartado se redactan las conclusiones obtenidas de la implementación del algoritmo BBO adaptado utilizando la estrategia \textit{Single-Objective Evolutionary Algorithm} (SOEA). Esta adaptación se ha realizado utilizando una suma ponderada para poder aplicarlo a los problemas multiobjetivos $\mathcal{T}_1, \ldots, \mathcal{T}_6$ de \citetitle{zitzler2000comparison}.
 

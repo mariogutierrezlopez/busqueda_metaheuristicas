@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber document"] 1761480373.62669 "document.bcf" "document.bbl" "document" 1761480456.43855 0
-  "document.bcf" 1761480456 107917 74304d3fecadb4ce6e749bd7f6a4891c "pdflatex"
+["biber document"] 1761480373.62669 "document.bcf" "document.bbl" "document" 1761480725.41226 0
+  "document.bcf" 1761480725 107917 74304d3fecadb4ce6e749bd7f6a4891c "pdflatex"
   "referencias.bib" 1761474822 570 965cabeb17918e2c4d9cffd665762251 ""
   (generated)
   "document.bbl"
   "document.blg"
   (rewritten before read)
-["pdflatex"] 1761480455.05805 "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" "document.pdf" "document" 1761480456.43936 0
+["pdflatex"] 1761480724.06079 "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" "document.pdf" "document" 1761480725.41361 0
   "C:/Users/Mator/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761435195 81116 42e978edc04ab2135d8d2c5e7065b4fe ""
   "C:/Users/Mator/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758905278 24225046 23356836e8c6602eb1b039313ab69f1f ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -102,11 +102,11 @@
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.def" 1280941015 1620 fb1c32b818f2058eca187e5c41dfae77 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.sty" 1280941015 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
   "C:/Users/Mator/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" 1761480454 20532 5ddca0b5d13a67f3ea6ca3e1e8431adf ""
-  "document.aux" 1761480456 2126 8c7fcfeed185897d183483931aea27ff "pdflatex"
+  "c:/Users/Mator/OneDrive/Documentos/MASTER/METAHEURISTICAS/busqueda_metaheuristicas/BBO/informe/document.tex" 1761480724 20526 85c841758074305adca0ab54f6028ce5 ""
+  "document.aux" 1761480725 2112 a082505c737540d982528535df98a413 "pdflatex"
   "document.bbl" 1761480381 3287 af6e014f941750878da50bcf20c59157 "biber document"
-  "document.run.xml" 1761480456 2334 aa2503ca0d14e33589cec530a1fa0891 "pdflatex"
-  "document.tex" 1761480454 20532 5ddca0b5d13a67f3ea6ca3e1e8431adf ""
+  "document.run.xml" 1761480725 2334 aa2503ca0d14e33589cec530a1fa0891 "pdflatex"
+  "document.tex" 1761480724 20526 85c841758074305adca0ab54f6028ce5 ""
   "resultados_bbo_3x2.png" 1761480219 79479 d835a39f8ea6015f6954a866f7812b85 ""
   (generated)
   "document.aux"
