@@ -131,7 +131,7 @@ def crowding_distance(pop_objs, front):
 # ----------------------------
 class MOBBO_Simon:
     def __init__(self, obj_func, dim=30, lb=0.0, ub=1.0,
-                 pop_size=100, max_gen=250, elite_count=2,
+                 pop_size=50, max_gen=100, elite_count=2,
                  I=1.0, E=1.0, m_max=0.01, archive_size=200, seed=None):
         """
         obj_func: function(x) -> np.array([f1,f2])
@@ -319,8 +319,8 @@ if __name__ == "__main__":
     problem_name = 'ZDT1'   # choose ZDT1, ZDT2, ZDT3, ZDT4, ZDT6
     func = PROBLEMS[problem_name]
     dim = 30
-    pop_size = 100
-    gen = 250
+    pop_size = 50
+    gen = 100
     seed = 42
 
     mobbo = MOBBO_Simon(obj_func=func, dim=dim, lb=0.0, ub=1.0,

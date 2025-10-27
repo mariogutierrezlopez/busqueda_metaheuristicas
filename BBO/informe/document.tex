@@ -42,6 +42,38 @@ BBO se basa en la idea de que las soluciones a un problema pueden ser representa
 
 Este algoritmo mantiene una población fija de soluciones y las modifica en cada iteración mediante dos operadores principales: migracion y mutación.
 
+\subsection{Migración} \label{sec:migration}
+
+Supongamos que tenemos un problema y una población de soluciones candidatas representada como un vector de números enteros. Cada uno de estos números enteros es considerado un SIV (\textit{Suitability Index Variable}).
+Las soluciones que son buenas son consideradas habitantes con un HSI alto y las que son malas tienen un HSI bajo. Las soluciones con un HSI alto representan hábitats de muchas especies mientras las soluciones con un HSI bajo representan hábitats de pocas especies. Supongamos dos soluciones $S_1$ y $S_2$ para la explicación:
+
+\begin{itemize}
+    \item $S_1$ es considerada una solución con un HSI bajo, representa un hábitat con pocas especies. Su tasa de inmigración $\lambda_1$ va a ser más alta que $\lambda_2$. Su tasa de emigración $\mu_1$ va a ser más baja que $\mu_2$.
+    \item $S_2$ es considerada una solución con un HSI alto, representa un hábitat con muchas especies. Su tasa de inmigración $\lambda_2$ va a ser más baja que $\lambda_1$. Su tasa de emigración $\mu_2$ va a ser más alta que $\mu_1$.
+\end{itemize}
+Se utilizan las tasas de emigración ($\mu$) e inmigración ($\lambda$) de cada solución para compartir información probabilísticamente entre hábitats15. El proceso de modificación funciona así:
+\begin{itemize}
+    \item La probabilidad de que una solución $H_i$ sea seleccionada para ser modificada es proporcional a su tasa de inmigración $\lambda_i$.
+    \item Si la solución $H_i$ es seleccionada para ser modificada, se usa la tasa de emigración $\mu_j$ de las otras soluciones ($j \neq i$) para decidir probabilísticamente cuál de ellas donará un SIV.
+    \item Se selecciona un SIV aleatorio de la solución donante $H_j$ y este reemplaza a un SIV aleatorio en la solución receptora $H_i$.
+\end{itemize}
+La migración en BBO es un proceso adaptativo; se usa para modificar las "islas" (soluciones) existentes 19. Además, como en otros algoritmos basados en población, se incorpora elitismo para retener las mejores soluciones, evitando que sean corrompidas por la inmigración.
+
+
+\subsection{Mutación} \label{sec:mutation}Los eventos aleatorios pueden cambiar drásticamente el HSI de un hábitat. Esto se modela en BBO como la mutación del SIV, y se usan las probabilidades de conteo de especies para determinar las tasas de mutación10. Las probabilidades de las especies se rigen por la Ecuación (2).\\
+
+Cada miembro de la población tiene una probabilidad asignada ($P_s$), la cual hace referencia a la probabilidad que tenía a priori de existir como una solución al problema12. Tanto las soluciones con un HSI muy alto como las soluciones con un HSI muy bajo son igualmente improbables13. Las soluciones con un HSI medio son, en comparación, muy probables.\\
+
+Si una solución $S$ tiene una baja probabilidad $P_s$, es sorprendente que exista y, por lo tanto, es probable que mute a otra solución. Por el contrario, una solución con una probabilidad alta es menos probable que mute. La siguiente fórmula define la tasa de mutación $m$, la cual es inversamente proporcional a la probabilidad de la solución:
+
+$$m(S) = m_{\text{max}} \left( \frac{1 - P_s}{P_{\text{max}}} \right)$$
+
+En esta fórmula, $m_{max}$ es un parámetro definido por el usuario18. Este enfoque tiende a aumentar la diversidad entre la población19. Sin él, las soluciones más probables (HSI medio) tenderían a dominar la población. Este mecanismo hace que las soluciones con HSI bajo sean propensas a mutar (dándoles la oportunidad de mejorar) y que las soluciones con HSI alto también lo sean (dándoles la oportunidad de mejorar aún más).\\
+
+Es importante recalcar que se utiliza un enfoque elitista. Se guardan las mejores soluciones antes de la mutación, de modo que si una mutación de "alto riesgo" arruina el HSI de una buena solución, la original se conserva. Se espera que las soluciones con HSI medio (las más probables) mejoren a través de la migración, por lo que se evita mutarlas (aunque conservan una pequeña probabilidad de mutación).\\
+
+El mecanismo de mutación implementado depende del problema24. Por ejemplo, en el problema de selección de sensores discutido en el artículo, la mutación consiste en reemplazar un sensor (SIV) escogido aleatoriamente por otro sensor generado también aleatoriamente.
+
 \section{Definiciones previas}
 \label{sec:meta1_algoritmo}
 
@@ -106,40 +138,6 @@ En la práctica, asumimos que $\lambda$ y $\mu$ son funciones lineales con los m
         \item$ \mathcal{T}: H^{n} \rightarrow {true,false}$ es un criterio de terminación.
     \end{itemize}
 \end{mydef}
-
-
-\subsection{Migración} \label{sec:migration}
-
-Supongamos que tenemos un problema y una población de soluciones candidatas representada como un vector de números enteros. Cada uno de estos números enteros es considerado un SIV (\textit{Suitability Index Variable}).
-Las soluciones que son buenas son consideradas habitantes con un HSI alto y las que son malas tienen un HSI bajo. Las soluciones con un HSI alto representan hábitats de muchas especies mientras las soluciones con un HSI bajo representan hábitats de pocas especies. Supongamos dos soluciones $S_1$ y $S_2$ para la explicación:
-
-\begin{itemize}
-    \item $S_1$ es considerada una solución con un HSI bajo, representa un hábitat con pocas especies. Su tasa de inmigración $\lambda_1$ va a ser más alta que $\lambda_2$. Su tasa de emigración $\mu_1$ va a ser más baja que $\mu_2$.
-    \item $S_2$ es considerada una solución con un HSI alto, representa un hábitat con muchas especies. Su tasa de inmigración $\lambda_2$ va a ser más baja que $\lambda_1$. Su tasa de emigración $\mu_2$ va a ser más alta que $\mu_1$.
-\end{itemize}
-Se utilizan las tasas de emigración ($\mu$) e inmigración ($\lambda$) de cada solución para compartir información probabilísticamente entre hábitats15. El proceso de modificación funciona así:
-\begin{itemize}
-    \item La probabilidad de que una solución $H_i$ sea seleccionada para ser modificada es proporcional a su tasa de inmigración $\lambda_i$.
-    \item Si la solución $H_i$ es seleccionada para ser modificada, se usa la tasa de emigración $\mu_j$ de las otras soluciones ($j \neq i$) para decidir probabilísticamente cuál de ellas donará un SIV.
-    \item Se selecciona un SIV aleatorio de la solución donante $H_j$ y este reemplaza a un SIV aleatorio en la solución receptora $H_i$.
-\end{itemize}
-La migración en BBO es un proceso adaptativo; se usa para modificar las "islas" (soluciones) existentes 19. Además, como en otros algoritmos basados en población, se incorpora elitismo para retener las mejores soluciones, evitando que sean corrompidas por la inmigración.
-
-
-\subsubsection{Mutación} \label{sec:mutation}Los eventos aleatorios pueden cambiar drásticamente el HSI de un hábitat. Esto se modela en BBO como la mutación del SIV, y se usan las probabilidades de conteo de especies para determinar las tasas de mutación10. Las probabilidades de las especies se rigen por la Ecuación (2).\\
-
-Cada miembro de la población tiene una probabilidad asignada ($P_s$), la cual hace referencia a la probabilidad que tenía a priori de existir como una solución al problema12. Tanto las soluciones con un HSI muy alto como las soluciones con un HSI muy bajo son igualmente improbables13. Las soluciones con un HSI medio son, en comparación, muy probables.\\
-
-Si una solución $S$ tiene una baja probabilidad $P_s$, es sorprendente que exista y, por lo tanto, es probable que mute a otra solución. Por el contrario, una solución con una probabilidad alta es menos probable que mute. La siguiente fórmula define la tasa de mutación $m$, la cual es inversamente proporcional a la probabilidad de la solución:
-
-$$m(S) = m_{\text{max}} \left( \frac{1 - P_s}{P_{\text{max}}} \right)$$
-
-En esta fórmula, $m_{max}$ es un parámetro definido por el usuario18. Este enfoque tiende a aumentar la diversidad entre la población19. Sin él, las soluciones más probables (HSI medio) tenderían a dominar la población. Este mecanismo hace que las soluciones con HSI bajo sean propensas a mutar (dándoles la oportunidad de mejorar) y que las soluciones con HSI alto también lo sean (dándoles la oportunidad de mejorar aún más).\\
-
-Es importante recalcar que se utiliza un enfoque elitista. Se guardan las mejores soluciones antes de la mutación, de modo que si una mutación de "alto riesgo" arruina el HSI de una buena solución, la original se conserva. Se espera que las soluciones con HSI medio (las más probables) mejoren a través de la migración, por lo que se evita mutarlas (aunque conservan una pequeña probabilidad de mutación).\\
-
-El mecanismo de mutación implementado depende del problema24. Por ejemplo, en el problema de selección de sensores discutido en el artículo, la mutación consiste en reemplazar un sensor (SIV) escogido aleatoriamente por otro sensor generado también aleatoriamente.
-
 
 \section{Algoritmo}
 
