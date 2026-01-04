@@ -45,7 +45,7 @@ Para ejecutar los cuadernos de Jupyter y los scripts de Python, se recomienda cr
 
 ```bash
 # Clonar el repositorio
-git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/tu-usuario/tu-repositorio.git)
+git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/mariogutierrezlopez/busqueda_metaheuristicas.git)
 
 # Instalar dependencias básicas
 pip install numpy matplotlib jupyter
