@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage{amsmath} % Para ecuaciones
+\usepackage{amssymb}
+\usepackage{graphicx} % Para gráficos
+\usepackage{url} % Para URLs de referencias
+
+\title{Sistema de Hormigas Elitista}
+\author{Jesús Samuel García Carballo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+
+Uno de los problemas más estudiados por los etólogos ha sido entender cómo animales con capacidades visuales
+limitadas, como las hormigas, logran establecer rutas eficientes desde su colonia para conseguir recursos y volver.
+Se ha descubierto que la forma más usual para comunicar información entre los individuos sobre los caminos, 
+y que se usa para decidir a dónde ir, se basa en el rastro de feromonas.
+El movimiento de hormigas deposita esta sustancia en el suelo, marcando el sendero.
+Este mecanismo genera un proceso de retroalimentación positiva: de tal forma que cuanto más sigan las hormigas 
+un rastro, más atractivo se vuelve ese rastro para ser seguido. 
+En concreto, este comportamiento colectivo se caracteriza porque la probabilidad de que una hormiga escoja 
+un camino aumenta en función del número de individuos que ya han transitado esa misma ruta.
+
+\section{Sistema de Hormigas}
+
+En primer lugar vamos a utilizar el problema del viajante de comercio (TSP) como caso de estudio para
+implementar nuestro sistema de hormigas elitista. 
+El TSP es un problema clásico de optimización combinatoria que busca encontrar la ruta más corta 
+que visite un conjunto de ciudades exactamente una vez y regrese a la ciudad de origen.
+
+Dado un conjunto de n ciudades, denominamos $d_{ij}$ a la longitud del camino entre la ciudades i y j,
+que suele ser la distancia euclídea. Este conjunto de ciudades y caminos viene representado por un grafo (N, E),
+donde N es el conjunto de nodos (ciudades) y E el conjunto de aristas (caminos entre ciudades).
+
+Denominamos $b_i(t)$ el número total de hormigas en la ciudad i en el tiempo t y $m = \sum_{i=1}^{n} b_i(t)$ 
+el número total de hormigas en el tiempo t.
+Cada hormiga dispone de las siguientes características:
+\begin{itemize}
+    \item Escoge la ciudad siguiente con una probabilidad, que es función de la cantidad de feromona en el camino y de la distancia a la ciudad siguiente.
+    \item Obligamos a que realice recorridos válidos, prohibiendo las transiciones a pueblos ya visitados hasta que se complete un recorrido, mediante una lista tabú.
+    \item Cuando se completa un recorrido, deposita una sustancia llamada rastro en cada arista visitada.
+\end{itemize}
+
+Sea $\tau_{ij}(t)$ la cantidad de feromona en el camino entre las ciudades i y j en el tiempo t.
+Cada hormiga en el tiempo t, debe escoger la siguiente ciudad, donde estará en tiempo t+1.
+Por lo tanto, si llamamos a una iteración del algoritmo a los m movimientos realizados por las m hormigas en el intervalo (t, t+1), 
+entonces cada n iteraciones del algoritmo, cada hormiga ha completado un recorrido, lo que denominaremos ciclo.
+
+En cada ciclo la intensidad del camino se actualiza de la siguiente forma:
+\begin{equation}
+    \tau_{ij}(t+n) = \rho \cdot \tau_{ij}(t) + \Delta \tau_{ij}
+\end{equation}
+donde $0 < \rho < 1$ es un coeficiente tal que $1 - \rho$ representa la evaporación del camino entre t y t+n, y
+\begin{equation}
+   \Delta \tau_{ij} = \sum_{k=1}^{m} \Delta \tau_{ij}^k
+\end{equation}
+donde $\Delta \tau_{ij}^k$ es la cantidad por unidad de longitud de feromona que la hormiga k deposita en el camino entre las ciudades i y j, 
+entre el tiempo t y t+n.
+Esta cantidad se define como:
+\begin{equation}
+    \Delta \tau_{ij}^k = \begin{cases}
+    Q / L_k & \text{si la hormiga } k \text{ utiliza el camino } (i, j) \text{ en su recorrido}\\
+    0 & \text{en otro caso}
+    \end{cases}
+\end{equation}
+donde Q es una constante y $L_k$ la longitud del recorrido realizado por la hormiga k.
+
+Con el objetivo de satisfacer la restricción de que cada hormiga debe visitar todas las n diferentes ciudades, asociamos a cada hormiga
+una lista tabú que almacena las ciudades ya visitadas por esa hormiga.
+Cuando se completa un ciclo, la lista tabú se utiliza para calcular la solución actual de cada hormiga.
+Luego, la lista se vacía y cada hormiga comienza un nuevo ciclo.
+
+Llamamos visibilidad, $n_{ij}$, a la distancia inversa entre las ciudades i y j, $\frac{1}{d_{i,j}}$. 
+Esta cantidad no se modifica durante la ejecución del algoritmo y representa la información heurística disponible para las hormigas.
+
+Definimos la probabilidad de transición de una ciudad i a una ciudad j para la hormiga k en el tiempo t como:
+\begin{equation}
+    p_{ij}^k = \begin{cases}
+    \frac{[\tau_{ij}(t)]^{\alpha} \cdot [n_{ij}]^{\beta}}{\sum_{l \in \text{allowed}_k} [\tau_{il}(t)]^{\alpha} \cdot [n_{il}]^{\beta}} & \text{si } j \in \text{allowed}_k\\
+    0 & \text{en otro caso}
+    \end{cases}
+    \label{eq}
+\end{equation}
+donde $\text{allowed}_k$ es el conjunto de ciudades que la hormiga k no ha visitado aún, y $\alpha$ y $\beta$ son parámetros que controlan la
+importancia relativa entre la feromona y la visibilidad.
+Por lo tanto, esta probabilidad es un equilibrio entre la visibilidad, que indica que se deben elegir las ciudades más cercanas con mayor probabilidad,
+y la intensidad del rastro en el tiempo t, que indica que si en la arista (i, j) ha habido mucho tráfico, entonces ese camino es más atractivo.
+
+\section{Algoritmo}
+
+El algoritmo comienza con una fase de inicialización, donde las hormigas se posicionan en diferentes ciudades y se establece la intensidad inicial de feromona en cada arista del grafo
+mediante $\tau_{ij}(0)$. Inicializamos el primer elemento de la lista tabú de cada hormiga con la ciudad donde se encuentra.
+
+Luego, cada hormiga se moverá desde la ciudad i a la ciudad j según la probabilidad de transción y tras n iteraciones todas las hormigas habrán completado un ciclo y sus listas tabú contendrán un recorrido completo.
+En este punto, para cada hormiga k se actualiza $L_k$ y la intensidad de feromona en cada arista del grafo según la fórmula dada anteriormente.
+Además, se guarda el camino más corto encontrado, $min_k L_k, \quad k = 1,...,m$.
+Este proceso se repite hasta que se cumple un criterio de parada, como alcanzar un número máximo de ciclos, $NC_{MAX}$ o todas las hormigas convergen a la misma solución.
+
+Formalmente, el algoritmo se puede describir con los siguientes pasos:
+\begin{enumerate}
+    \item Inicialización: \\
+    \hspace*{0.25cm} Definimos t := 0. \\
+    \hspace*{0.25cm} Definimos NC := 0. \\
+    \hspace*{0.25cm} Para cada arco (i, j) definimos la intensidad $\tau_{ij}(0) = c$ y $\Delta \tau_{ij} = 0$. \\
+    \hspace*{0.25cm} Colocar las m hormigas en los n nodos.
+    \item Sea s := 1. \\
+    Para k = 1 hasta m hacer \\
+    \hspace*{0.25cm} Colocar la ciudad inicial de la hormiga k en la lista tabú, $tabu_k(s)$. 
+
+    \item Repetir hasta que la lista tabú se complete: \\
+    Definimos s := s+1 \\
+    Para k = 1 hasta m hacer \\
+    \hspace*{0.25cm} Elegir la ciudad j a la que moverse con probabilidad $p_{ij}^k(t)$. \\
+    \hspace*{0.25cm} Mover la hormiga k a la ciudad j. \\
+    \hspace*{0.25cm} Colocar la ciudad j en la lista tabú, $tabu_k(s)$. 
+    
+    \item Para k = 1 hasta m hacer \\
+    \hspace*{0.25cm} Mover la hormiga k de $tabu_k(n)$ a $tabu_k(1)$. \\
+    \hspace*{0.25cm} Calcular la longitud del recorrido descrito por la hormiga k, $L_k$. \\
+    \hspace*{0.25cm} Actualizar el camino más corto encontrado. \\
+    \hspace*{0.25cm} Para cada arco (i, j) del grafo hacer \\
+    \hspace*{0.25cm} Para k = 1 hasta m hacer 
+    \begin{equation*}
+        \Delta \tau_{ij}^k = \begin{cases}
+        Q / L_k & \text{si } (i, j) \in \text{ciclo descrito por } tabu_k \\
+        0 & \text{en otro caso}
+        \end{cases}
+    \end{equation*}
+
+    \hspace*{0.25cm} $\Delta \tau_{ij} := \Delta \tau_{ij} + \Delta \tau_{ij}^{k}$
+
+    \item Para cada arco (i, j) calcular $\tau_{ij}(t+n) = \rho \cdot \tau_{ij}(t) + \Delta \tau_{ij}$. \\
+    Definir t := t + n. \\
+    Definir NC := NC + 1. \\
+    Para cada arco (i, j) definir $\Delta \tau_{ij} := 0$. 
+
+    \item Si $(NC < NC_{MAX})$ y no todas las hormigas han convergido a la misma solución \\
+    entonces \\
+    \hspace*{0.25cm} Vaciar todas las listas tabú. \\
+    \hspace*{0.25cm} Ir al paso 2. \\
+    sino \\
+    \hspace*{0.25cm} Imprimir el ciclo más corto encontrado. \\
+    \hspace*{0.25cm} Parar.
+
+\end{enumerate}
+
+\subsection{Estrategia elitista}
+
+Para mejorar el rendimiento del algoritmo, implementamos una estrategia elitista. 
+Para ello añadimos al camino de cada arco del mejor ciclo la cantidad $e \cdot Q/L^{*}$, donde e es el número de hormigas elitistas y $L^{*}$ la longitud del mejor ciclo encontrado hasta el momento.
+De esta forma, se refuerza el camino del mejor ciclo, acelerando la convergencia del algoritmo.
+
+\section{Implementación}
+
+\section{Conclusiones}
+
+\section{Referencias}
+
+\bibliographystyle{plain}
+\bibliography{referencias} 
+
+\end{document}
