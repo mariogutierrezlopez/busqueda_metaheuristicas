@@ -1,0 +1,116 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[left=2.5cm,right=2.5cm,top=3.5cm,bottom=2.5cm]{geometry} % Set paper margins
+\usepackage{graphicx} % Required for inserting images
+\usepackage{url}
+\usepackage{xurl}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{fancyhdr} % Head/foot config
+\usepackage{pdfpages}
+\usepackage{marvosym}
+\usepackage{listings}
+\usepackage{tabularx,ragged2e}
+\newcolumntype{C}{>{\Centering\arraybackslash}X} % centered "X" column
+\usepackage{amsmath}
+\emergencystretch 5em%
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{placeins}
+\usepackage{todonotes}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+
+\renewcommand{\lstlistingname}{Listado}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+  captionpos=b,
+  aboveskip=12pt
+}
+
+\newcommand{\leftalign}[1]{
+  \setlength{\parindent}{0pt}
+  \setlength{\hangindent}{\linewidth}
+  \hangafter=1 #1
+}
+
+\begin{document}
+
+%%% PORTADA
+\input{cover}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\textit{Búsqueda Inteligente basada en Metaheurísticas - Práctica 9}}
+\fancyfoot[R]{\thepage}
+
+%%% RESUMEN (pag 2)
+
+\pagebreak
+\pagenumbering{roman}
+
+%\renewcommand{\abstractname}{Resumen}
+%\begin{abstract}
+%\setlength{\parskip}{\baselineskip}
+%Resumen.
+%\end{abstract}
+
+\pagebreak
+
+%%% INDICE (pag 3)
+
+% Contenidos
+\renewcommand{\contentsname}{Índice de contenidos}
+\tableofcontents
+\pagebreak
+% Tablas
+%\renewcommand{\listtablename}{Índice de tablas}
+%\listoftables
+\pagebreak
+% Figuras
+\renewcommand{\listfigurename}{Índice de figuras}
+\listoffigures
+\pagebreak
+% Listados
+%\renewcommand{\lstlistlistingname}{Índice de listados}
+%\lstlistoflistings
+%\pagebreak
+
+\pagebreak
+
+%%% CUERPO
+
+\pagenumbering{arabic}
+\setlength{\parskip}{\baselineskip}
+
+% Introducción
+\input{intro.tex}
+\pagebreak
+
+% BBO
+\input{bbo.tex}
+\pagebreak
+
+% ANTS
+\input{ants.tex}
+\pagebreak
+
+% FANS
+\input{fans.tex}
+\pagebreak
+
+% Conclusiones
+\input{conclusiones.tex}
+\pagebreak
+
+%%% BIBLIOGRAFIA
+
+\bibliographystyle{IEEEtran}
+\nocite{*}
+\renewcommand{\refname}{Bibliografía}
+\bibliography{./referencias.bib} 
+
+\end{document}
