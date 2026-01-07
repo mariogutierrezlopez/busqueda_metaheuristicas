@@ -1,1 +1,32 @@
 \section{Introducción}
+
+Las metaheurísticas representan una de las áreas más interesantes de la inteligencia artificial. 
+Su importancia radica en la capacidad de ofrecer estrategias para hallar buenas soluciones en 
+espacios de búsqueda complejos, donde algoritmos clásicos resultarían computacionalmente inviables. 
+
+En el presente trabajo se analiza la eficacia y el comportamiento de tres algoritmos que aplican distintos 
+enfoques, los dos primeros inspirados en la naturaleza y el último en la lógica matemática, para explorar 
+estos espacios de búsqueda:
+
+\begin{itemize}
+    \item \textbf{Optimización Basada en Biogeografía (BBO):} Este algoritmo se inspira en el estudio de la 
+    distribución geográfica de las especies biológicas. 
+    Su mecanismo principal se basa en el intercambio de información mediante los operadores de migración
+    y mutación, permitiendo que las soluciones con mayor índice de idoneidad (HSI) compartan sus atributos 
+    con las de menor calidad para mejorar la población global.
+    
+    \item \textbf{Sistema de Hormigas Elitista (EAS):} Basado en el comportamiento de las colonias de hormigas, 
+    este método utiliza el concepto del rastro de feromonas para establecer rutas eficientes. 
+    Mediante un proceso de retroalimentación positiva y una estrategia elitista, el algoritmo refuerza los caminos 
+    que componen las mejores soluciones encontradas, facilitando la convergencia en problemas complejos como el de 
+    asignación generalizado.
+    
+    \item \textbf{Fuzzy Adaptive Neighborhood Search (FANS):} Se presenta como un entorno de búsqueda adaptativo 
+    que integra la lógica difusa para cualificar las soluciones. 
+    Su gran versatilidad se encuentra en el uso de una valoración difusa ($\mu$) que permite modular el comportamiento 
+    del algoritmo, permitiéndole emular diversas metaheurísticas clásicas o adaptarse a perfiles de decisión específicos, 
+    como criterios conservadores o de diversificación.
+
+\end{itemize}
+
+A través de la implementación de estos métodos, se pretende comprender no solo su fundamentación teórica, sino también su rendimiento práctico ante problemas \textit{benchmark} y escenarios de optimización multiobjetivo.
